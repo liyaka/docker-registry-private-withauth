@@ -1,0 +1,30 @@
+version: '2'
+services:
+  registry-web:
+    container_name: registry-web
+    image: hyper/docker-registry-web:latest
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+       - ./conf/registry-web:/conf:ro
+       - /data/RegistryData/webdb:/data
+    networks:
+      - registry-net
+    depends_on:
+       - registry
+  registry:
+    container_name: registry
+    image: registry:2.6.1
+    restart: always
+    ports:
+      - 5000:5000
+    volumes:
+      - ./conf/registry:/etc/docker/registry:ro
+      - /data/RegistryData/registry:/registry
+    networks:
+      - registry-net
+
+networks:
+  registry-net:
+#    driver: default
