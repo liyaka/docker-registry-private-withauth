@@ -1,7 +1,8 @@
 # docker-registry-private-withauth
 Run your own docker registry with authentication
 
-Uses https://github.com/mkuchin/docker-registry-web - simple Web UI for Docker Registry
+Uses https://github.com/mkuchin/docker-registry-web - simple Web UI for Docker Registry.
+
 The configuration is taken from https://github.com/mkuchin/docker-registry-web/tree/master/examples with minor updates I needed. See https://github.com/mkuchin/docker-registry-web for more configuration explanations
 
 
